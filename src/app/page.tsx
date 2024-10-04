@@ -1,82 +1,11 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
-import Ummah from "../public//assets/ummah2.webp";
-import PNF from "../public//assets/pnf.png";
+import Image from "next/image";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { CaretSortIcon, OpenInNewWindowIcon } from "@radix-ui/react-icons";
 import { Toggle } from "@/components/ui/toggle";
 import { useState } from "react";
-
-type IFrameStuff = {
-  title: string;
-  description: string;
-  src: string;
-  component: "iframe";
-  filter: Filters;
-  sort: number;
-  date: Date;
-  isYoutube?: boolean;
-};
-type ImageStuff = {
-  title: string;
-  description: string;
-  src: StaticImageData;
-  href: string;
-  component: "Image";
-  filter: Filters;
-  sort: number;
-  date: Date;
-};
-
-type DevStuff = IFrameStuff | ImageStuff;
-enum Filters {
-  WORK = 1,
-  PROJECTS,
-  TEACHING,
-  CONTRACT
-}
-
-const devStuff: DevStuff[] = [
-  {
-    title: "Creating a Pong Game",
-    description: "Tutorial for Creating a Pong Game with JavaScript",
-    src: "https://www.youtube.com/embed/U4QSE7-ySDo",
-    component: "iframe",
-    filter: Filters.TEACHING,
-    sort: 2,
-    date: new Date("2024-09-01"),
-    isYoutube: true
-  },
-  {
-    title: "Into The Woods",
-    description: "Into The Woods Wedding Website and registry",
-    src: "https://www.intothewoods.wedding/",
-    component: "iframe",
-    filter: Filters.CONTRACT,
-    sort: 1,
-    date: new Date("2024-07-01")
-  },
-  {
-    title: "Our Ummah",
-    description: "Social Media App for religious communities",
-    src: Ummah,
-    href: "https://apps.apple.com/in/app/ourummah/id1638542613",
-    component: "Image",
-    filter: Filters.PROJECTS,
-    sort: 3,
-    date: new Date("2022-09-01")
-  },
-  {
-    title: "ParkNFly",
-    description: "Airport parking app used nationwide by millions",
-    src: PNF,
-    href: "https://www.pnf.com/",
-    component: "Image",
-    filter: Filters.WORK,
-    sort: 4,
-    date: new Date("2021-09-01")
-  }
-];
+import { devStuff } from "./constants/devStuff";
+import { Filters } from "./types/FiltersEnum";
 
 export default function Home() {
   const [filter, setFilter] = useState<Filters | null>(null);
