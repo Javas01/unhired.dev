@@ -60,10 +60,14 @@ export default function Home() {
                     stuff.src.split("/embed/")[1]
                   }`
                 : stuff.src;
+
             switch (component) {
               case "iframe":
                 return (
-                  <div className="flex flex-col">
+                  <div
+                    className="flex flex-col items-center w-full"
+                    key={description}
+                  >
                     <a target="_blank" rel="noopener noreferrer" href={href}>
                       <h1 className="text-center font-bold">
                         {title} <OpenInNewWindowIcon className="inline" />
@@ -72,6 +76,7 @@ export default function Home() {
                     <h2 className="text-center">{description}</h2>
                     <iframe
                       className="rounded-lg"
+                      width={400}
                       onClick={() => window.open(href, "_blank")}
                       src={src}
                       title={title}
@@ -83,7 +88,10 @@ export default function Home() {
                 );
               case "Image":
                 return (
-                  <div className="flex flex-col">
+                  <div
+                    className="flex flex-col items-center w-full"
+                    key={description}
+                  >
                     <a target="_blank" rel="noopener noreferrer" href={href}>
                       <h1 className="text-center font-bold">
                         {title} <OpenInNewWindowIcon className="inline" />

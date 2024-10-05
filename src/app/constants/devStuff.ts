@@ -1,5 +1,6 @@
 import Ummah from "../../public/assets/ummah2.webp";
 import PNF from "../../public/assets/pnf.png";
+import SS from "../../public/assets/ss.png";
 import { Filters } from "../types/FiltersEnum";
 import { DevStuff } from "../types/DevStuffType";
 
@@ -12,6 +13,16 @@ export const devStuff: DevStuff[] = [
     filter: Filters.TEACHING,
     sort: 2,
     date: new Date("2024-09-01"),
+    isYoutube: true
+  },
+  {
+    title: "Creating a TicTacToe Game",
+    description: "Tutorial for Creating a TicTacToe Game with JavaScript",
+    src: "https://www.youtube.com/embed/IOa2FkX4fGI",
+    component: "iframe",
+    filter: Filters.TEACHING,
+    sort: 7,
+    date: new Date("2024-09-04"),
     isYoutube: true
   },
   {
@@ -42,9 +53,28 @@ export const devStuff: DevStuff[] = [
     filter: Filters.WORK,
     sort: 4,
     date: new Date("2021-09-01")
+  },
+  {
+    title: "E Clinic Notes",
+    description: "Automated medical notes app for doctors",
+    src: "https://www.youtube.com/embed/Ix4_OQ0F_4I",
+    component: "iframe",
+    filter: Filters.PROJECTS,
+    sort: 5,
+    date: new Date("2020-09-01"),
+    isYoutube: true
+  },
+  {
+    title: "ShowSeeker",
+    description:
+      "End to end, cloud-based advertising order management platform",
+    src: SS,
+    href: "https://www.showseeker.com/",
+    component: "Image",
+    filter: Filters.WORK,
+    sort: 6,
+    date: new Date("2024-10-01")
   }
-  // TODO: add E-clinic-notes
-  // TODO: add ShowSeeker
   // TODO: add Rower
   // TODO: add volunteer work at school
 ];
