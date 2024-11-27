@@ -74,6 +74,15 @@ export const devStuff: DevStuff[] = [
     filter: Filters.WORK,
     sort: 6,
     date: new Date("2024-10-01")
+  },
+  {
+    title: "The Floor (yes, from the gameshow)",
+    description: "A picture game to test your knowledge of trivia",
+    src: "https://thefloor.games/",
+    component: "iframe",
+    filter: Filters.PROJECTS,
+    sort: 8,
+    date: new Date("2024-11-27")
   }
   // TODO: add Rower
   // TODO: add volunteer work at school
